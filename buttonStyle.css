@@ -1,0 +1,19 @@
+.createSynthContainer{
+    font-size: xx-large;
+}
+#btncreateSynth {
+    height:100px;
+    width:200px;
+    top: 100px;
+    font-size: x-large;
+}
+.select{
+    height:50px;
+    width:50x;
+    font-size: x-large;
+}
+
+#volumeControl{
+    width: 400px;
+    height:200px;
+}
