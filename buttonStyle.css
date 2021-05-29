@@ -125,5 +125,25 @@
     font-weight: bold;
     color:black;
     background-color: wheat;
+}
 
+.aFreqitem{
+    position:absolute;
+    left:30px;
+    top:0px;
+}
+#aFreqControl{
+    position: relative;
+    transform: scaleY(50%) scaleX(65%) translateX(-35%);
+    top:50px;
+}
+.txtaFreq{
+    position:relative;
+    width: 50px;
+    left:60px;
+}
+.lblaFreq{
+    position: relative;
+    top:25px;
+    left:40px;
 }

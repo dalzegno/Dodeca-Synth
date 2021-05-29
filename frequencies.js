@@ -36,7 +36,7 @@
 
 //----------JUST INTONATION
 function getJustScale(a,octaves, fundamentalNote) {
-
+  let aCache = a;
   // -1 Octave
   a = a * 0.03125;
   
@@ -58,10 +58,10 @@ function getJustScale(a,octaves, fundamentalNote) {
   var fundamental = 0;
   var t0, t1, t2, t3, t4, t5, t6, t7, t8, t9, t10;
   var tones = [t0, t1, t2, t3, t4, t5, t6, t7, t8, t9, t10];
-  var ratios = [1, 1.0625, 1.125, 1.1875, 1.25, 1.333333333333333333333, 
-    1.46666666666666666666666666666666,
-  1.5, 1.6, 1.666666666666666666666666666666666666666666,
-   1.77777777777777777777777777777777777777777777777, 1.9];
+  var ratios = [1, 1.0625, 1.125, 1.1875, 1.25, 1.3333333333, 
+    1.4666666666,
+  1.5, 1.6, 1.6666666666,
+   1.7777777777, 1.9];
   let j = 0;
   if(fundamentalNote == "C"){
       fundamental = c;
@@ -188,7 +188,15 @@ function getJustScale(a,octaves, fundamentalNote) {
           justScale[i][11] = fundamental * tones[11];    //B
   
       }
-  
+      console.log(justScale[4][9], "BEFORE");
+      var tuneCorrection = aCache/(justScale[4][9]);
+      console.log(tuneCorrection);
+      for(let i = 1; i < justScale.length;i++){
+        for(let j = 0; j <= 11;j++){
+        justScale[i][j] = justScale[i][j] * tuneCorrection;
+        }
+      }
+      console.log(justScale[4][9], "AFTER");
   return justScale;
 }
 

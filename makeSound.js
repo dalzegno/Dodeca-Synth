@@ -207,14 +207,15 @@ let start;
       }
       else if(event.code == keyValid)
       {
-        console.log(event.code, "EVENT CODE!")
+        
         dataset = keypressList[event.code];
-        console.log(keypressList[event.code], "NOTE PRESSED!");
+        
         target = document.getElementById(`${dataset["octave"]}${dataset["notenumber"]}`);
       }
       
       if (!dataset["pressed"]) {
         start = audioContext.currentTime;
+        console.log(keypressList[event.code], "NOTE PRESSED!");
         //mainGainNode.gain.setValueAtTime(0,0);
         //mainGainNode.gain.linearRampToValueAtTime(1, now + 1);
         /*

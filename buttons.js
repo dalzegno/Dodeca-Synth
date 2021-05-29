@@ -204,7 +204,49 @@ document.body.appendChild(Sinecontainer);
 
 // ---------------- TUNING
 
-//----Just Intonation
+//----A frequency
+function appendaFreqItem(item, labeltext, textID){
+    var aFreqitem = document.createElement("div");
+    var aFreqlabel = document.createElement("label");
+    aFreqlabel.className = "lblaFreq";
+    aFreqlabel.innerHTML = `${labeltext}`;
+    var aFreqtextBox = document.createElement("input");
+    aFreqtextBox.type = "text";
+    aFreqtextBox.className = "txtaFreq";
+    aFreqtextBox.setAttribute("id", `${textID}`);
+    aFreqitem.className = "aFreqitem";
+    aFreqitem.appendChild(aFreqlabel);
+    aFreqitem.appendChild(item);
+    aFreqitem.appendChild(aFreqtextBox);
+    return aFreqitem;
+    }
+
+    var aFreqControl = document.createElement("input");
+    aFreqControl.setAttribute("id", "aFreqControl");
+    aFreqControl.className = "aFreqrange";
+    aFreqControl.type = "range";
+    aFreqControl.setAttribute("min", "420.0");
+    aFreqControl.setAttribute("max", "460.0");
+    aFreqControl.setAttribute("step", "0.5");
+    aFreqControl.setAttribute("value", "432");
+    var aFreqItem = appendaFreqItem(aFreqControl, "A Frequency", "txtaFreq");
+document.body.appendChild(aFreqItem);
+
+var aFreqTxt = document.getElementById("txtaFreq");
+aFreqTxt.value = aFreqControl.value;
+var aFrequency = aFreqControl.value;
+//Event listeners
+aFreqControl.addEventListener("change", () =>{
+    aFreqTxt.value = aFreqControl.value;
+    aFrequency = aFreqTxt.value;
+})
+aFreqControl.addEventListener("mousemove", () =>{
+    aFreqTxt.value = aFreqControl.value;
+    aFrequency = aFreqTxt.value;
+})
+
+
+//----------------Just Intonation-----------------
 var JustIntonationContainer = document.createElement("div");
 JustIntonationContainer.className = "justIntContainer";
 

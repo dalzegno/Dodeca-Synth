@@ -5,9 +5,9 @@ var x = createContainer();
 x.container.className = "container";
 x.container.setAttribute("id", "keybContainer");
 x.keyboard.className = "keyboard";
-var scale =  getEqualScale(9, 440);
+var scale =  getEqualScale(9, aFrequency);
 
-var justscale = getJustScale(432, 9, "C");
+var justscale = getJustScale(aFrequency, 9, "C");
 createOctaves(8, x.keyboard, justscale);
 
 // JUST INTONATION SELECT
@@ -23,7 +23,7 @@ justNote.addEventListener("change", () =>{
   y.keyboard.className = "keyboard";
   
   console.log(justNote.value);
-  var justscale = getJustScale(432, 9, note);
+  var justscale = getJustScale(aFrequency, 9, note);
   console.log(justscale);
   createOctaves(8, y.keyboard, justscale);
 
@@ -44,7 +44,7 @@ eqBtn.addEventListener("click", ()=>{
   y.container.setAttribute("id", "keybContainer");
   y.keyboard.className = "keyboard";
   
-  var scale =  getEqualScale(9, 440);
+  var scale =  getEqualScale(9, aFrequency);
   createOctaves(8, y.keyboard, scale);
 
 notepicker1();
