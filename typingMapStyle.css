@@ -69,14 +69,14 @@
     height:60px;
     width: 80px;
     bottom: 90px;
-    
+    border-radius: 20px 20px 20px 20px;
+    border: 6px solid salmon;
     font-size: xx-large;
 }
-
 .pickers{
     position:absolute;
     display: block;
-    left:-240px;
-    top: 100px;
+    left:-200px;
+    top: 135px;
     
 }

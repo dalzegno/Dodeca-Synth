@@ -37,7 +37,7 @@ document.body.appendChild(createSynthContainer);
 var volumeContainer = document.createElement("div");
 volumeContainer.setAttribute("id", "volumeContainer");
 var lblVolume = document.createElement("label");
-lblVolume.innerHTML = "Volume";
+lblVolume.innerHTML = "Volumée";
 var volumeControl = document.createElement("input");
 volumeControl.setAttribute("id", "volumeControl");
 volumeControl.type = "range";
