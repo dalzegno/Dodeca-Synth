@@ -3,15 +3,61 @@
 
 var x = createContainer();
 x.container.className = "container";
+x.container.setAttribute("id", "keybContainer");
 x.keyboard.className = "keyboard";
 var scale =  getEqualScale(9, 440);
-createOctaves(8, x.keyboard, scale);
+
+var justscale = getJustScale(432, 9, "C");
+createOctaves(8, x.keyboard, justscale);
+
+// JUST INTONATION SELECT
+var justNote = document.getElementById("justNoteDropdown");
+
+justNote.addEventListener("change", () =>{
+  note = justNote.value;
+  var node  = document.getElementById("keybContainer");
+  node.remove();
+  var y = createContainer();
+  y.container.className = "container";
+  y.container.setAttribute("id", "keybContainer");
+  y.keyboard.className = "keyboard";
+  
+  console.log(justNote.value);
+  var justscale = getJustScale(432, 9, note);
+  console.log(justscale);
+  createOctaves(8, y.keyboard, justscale);
+
+notepicker1();
+octavepicker1();
+notepickerA();
+octavepickerA();
+})
 
 
-// Creates key bindings
+//EQUAL TEMPERAMENT BUTTON
+var eqBtn = document.getElementById("eqTempBtn");
+eqBtn.addEventListener("click", ()=>{
+  var node  = document.getElementById("keybContainer");
+  node.remove();
+  var y = createContainer();
+  y.container.className = "container";
+  y.container.setAttribute("id", "keybContainer");
+  y.keyboard.className = "keyboard";
+  
+  var scale =  getEqualScale(9, 440);
+  createOctaves(8, y.keyboard, scale);
+
+notepicker1();
+octavepicker1();
+notepickerA();
+octavepickerA();
+})
+
+
+// Creates key bindings, Initial Octave
 var keylistUpper = getKeysDown("upper");
 var keymap = createKeyMap("C", keylistUpper);
-createKeyBindings("C", 1, keymap);
+createKeyBindings("C", 3, keymap);
 createKeyEvents(keymap);
 
 var keylistLower = getKeysDown("lower");

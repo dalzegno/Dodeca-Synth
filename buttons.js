@@ -76,7 +76,7 @@ attackControl.type = "range";
 attackControl.setAttribute("min", "0.0");
 attackControl.setAttribute("max", "100.0");
 attackControl.setAttribute("step", "0.1");
-attackControl.setAttribute("value", "3");
+attackControl.setAttribute("value", "0.9");
 var attackItem = appendADSRItem(attackControl, "Attack ", "txtAttack");
 //----DECAY
 var decayControl = document.createElement("input");
@@ -86,7 +86,7 @@ decayControl.type = "range";
 decayControl.setAttribute("min", "0.0");
 decayControl.setAttribute("max", "100.0");
 decayControl.setAttribute("step", "0.1");
-decayControl.setAttribute("value", "3");
+decayControl.setAttribute("value", "0.2");
 var decayItem = appendADSRItem(decayControl, "Decay ", "txtDecay");
 //----SUSTAIN
 var sustainControl = document.createElement("input");
@@ -106,7 +106,7 @@ releaseControl.type = "range";
 releaseControl.setAttribute("min", "0.0");
 releaseControl.setAttribute("max", "100.0");
 releaseControl.setAttribute("step", "0.1");
-releaseControl.setAttribute("value", "1");
+releaseControl.setAttribute("value", "2");
 var releaseItem = appendADSRItem(releaseControl, "Release ", "txtRelease");
 //-----
 
@@ -199,3 +199,39 @@ Sinecontainer.appendChild(s3Item);
 Sinecontainer.appendChild(s4Item);
 Sinecontainer.appendChild(s5Item);
 document.body.appendChild(Sinecontainer);
+
+
+
+// ---------------- TUNING
+
+//----Just Intonation
+var JustIntonationContainer = document.createElement("div");
+JustIntonationContainer.className = "justIntContainer";
+
+var notes = ["C","Db","D","Eb","E","F","Gb","G","Ab","A","Bb","B"];
+
+var justnoteDropdown = document.createElement("select");
+justnoteDropdown.className = "dropdown";
+justnoteDropdown.setAttribute("id", `justNoteDropdown`);
+notes.forEach((index) => {
+   var n = document.createElement("option");
+   n.value = index;
+   n.innerHTML = index;
+   justnoteDropdown.appendChild(n);
+});
+
+var lblJustNote = document.createElement("label");
+lblJustNote.innerHTML = "Just Intonation!";
+
+JustIntonationContainer.appendChild(lblJustNote);
+JustIntonationContainer.appendChild(justnoteDropdown);
+document.body.appendChild(JustIntonationContainer);
+
+
+//----Equal Temperament
+var equalTempBtn = document.createElement("button");
+equalTempBtn.setAttribute("id", "eqTempBtn");
+equalTempBtn.className = "equalTempBtn";
+equalTempBtn.innerHTML = "Equal Temperament";
+document.body.appendChild(equalTempBtn);
+

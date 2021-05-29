@@ -26,15 +26,13 @@ var octavePick1 = document.getElementById("octavePicker1");
 var notepick1 = document.getElementById("notePicker1");
 
 notepick1.addEventListener("change", () =>{
-    let note1 = notepick1.value;
-    let octave1 = octavePick1.value;
-    createTypingKeyMap("upper", notepick1.value, "1");
-    var keylistUpper = getKeysDown("upper");
-    var keymap = createKeyMap(note1, keylistUpper);
-    createKeyBindings(note1, octave1, keymap);
-    createKeyEvents(keymap);
+    notepicker1();
 })
 octavePick1.addEventListener("change", ()=>{
+   octavepicker1();
+})
+
+function notepicker1(){
     let note1 = notepick1.value;
     let octave1 = octavePick1.value;
     createTypingKeyMap("upper", notepick1.value, "1");
@@ -42,22 +40,28 @@ octavePick1.addEventListener("change", ()=>{
     var keymap = createKeyMap(note1, keylistUpper);
     createKeyBindings(note1, octave1, keymap);
     createKeyEvents(keymap);
-})
-
+}
+function octavepicker1(){
+    let note1 = notepick1.value;
+    let octave1 = octavePick1.value;
+    createTypingKeyMap("upper", notepick1.value, "1");
+    var keylistUpper = getKeysDown("upper");
+    var keymap = createKeyMap(note1, keylistUpper);
+    createKeyBindings(note1, octave1, keymap);
+    createKeyEvents(keymap);
+}
 
 //CREATE KEY BINDINGS FOR LOWER KEYBOARD TYPINGS
 var notepickA = document.getElementById("notePickerA");
 var octavePickA = document.getElementById("octavePickerA");
 notepickA.addEventListener("change", () =>{
-    let noteA = notepickA.value;
-    let octaveA = octavePickA.value;
-    createTypingKeyMap("lower", notepickA.value, "A");
-    var keylistUpper = getKeysDown("lower");
-    var keymap = createKeyMap(noteA, keylistLower);
-    createKeyBindings(noteA, octaveA, keymap);
-    createKeyEvents(keymap);
+    notepickerA();
 })
 octavePickA.addEventListener("change", ()=>{
+    octavepickerA();
+})
+
+function notepickerA(){
     let noteA = notepickA.value;
     let octaveA = octavePickA.value;
     createTypingKeyMap("lower", notepickA.value, "A");
@@ -65,11 +69,21 @@ octavePickA.addEventListener("change", ()=>{
     var keymap = createKeyMap(noteA, keylistLower);
     createKeyBindings(noteA, octaveA, keymap);
     createKeyEvents(keymap);
-})
+}
+function octavepickerA(){
+    let noteA = notepickA.value;
+    let octaveA = octavePickA.value;
+    createTypingKeyMap("lower", notepickA.value, "A");
+    var keylistLower = getKeysDown("lower");
+    var keymap = createKeyMap(noteA, keylistLower);
+    createKeyBindings(noteA, octaveA, keymap);
+    createKeyEvents(keymap);
+}
+
 //Initial typing maps
 notepick1.selectedIndex = 0;
 notepickA.selectedIndex = 0;
-octavePick1.selectedIndex = 0;
+octavePick1.selectedIndex = 2;
 octavePickA.selectedIndex = 1;
 createTypingKeyMap("upper", notepick1.value, "1");
 createTypingKeyMap("lower", notepickA.value, "A");
@@ -147,7 +161,6 @@ console.log("kmaps");
 var km = createKeyMap(note, kmap);
 for(let i = 0; i < kmap.length; i++){
     for(let j = 0; j < km.length; j++){
-        console.log(km[j], "KM!");
     if(kmap[i] == km[j]){
         if(i % 2 == 0){
             var k = document.getElementById(`typing${id}${i}`);
