@@ -9,21 +9,31 @@ createOctaves(6, x.keyboard, scale);
 
 
 createSynth.onclick = ()=>{
+var keylistUpper = getKeysDown("upper");
+var keymap = createKeyMap("C", keylistUpper);
+createKeyBindings("C", 2, keymap);
+createKeyEvents(keymap);
 
-var keymap = createKeyMap("A");
-createKeyBindings("A", 0, keymap);
+var keylistLower = getKeysDown("lower");
+var keymaplower = createKeyMap("E", keylistLower);
+createKeyBindings("E", 2, keymaplower);
+createKeyEvents(keymaplower);
 
-for(let i = 0; i < keymap.length; i++){
+}
+
+
+function createKeyEvents(keymaplist) {
+for(let i = 0; i < keymaplist.length; i++){
     document.addEventListener('keydown', logkey);
     function logkey(e){
-        if(e.code == keymap[i])
-        notePressed(e);
+        if(e.code == keymaplist[i])
+        notePressed(e, keymaplist[i]);
     }
 }
-  for(let i = 0; i < keymap.length; i++){
+  for(let i = 0; i < keymaplist.length; i++){
       document.addEventListener('keyup', logkey);
       function logkey(e){
-        if(e.code == keymap[i])
+        if(e.code == keymaplist[i])
         noteReleased(e);
     }
   }

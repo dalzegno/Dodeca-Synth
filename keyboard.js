@@ -58,7 +58,7 @@ function createOctaves(octaves, keyboard, freq){
 
         for(let j = 0; j < 12; j++){
             var key = createKey();
-            key.setAttribute("id", `${i}${j}`);
+            key.setAttribute("id", `${i + 1}${j}`);
 
             key.dataset["octave"] = i + 1;
             key.dataset["notenumber"] = j;
