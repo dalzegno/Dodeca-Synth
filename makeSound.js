@@ -9,6 +9,12 @@ let decayTime = decayControl.value/10;
 let sLevel = sustainControl.value;
 let releaseTime = 0.5;
 
+let s1;
+let s2;
+let s3;
+let s4;
+let s5;
+
 mainGainNode = audioContext.createGain();
 mainGainNode.connect(audioContext.destination);
 mainGainNode.gain.value = volumeControl.value;
@@ -18,9 +24,9 @@ volumeControl.addEventListener("change", () => {
 mainGainNode.gain.value = volumeControl.value;
 })
 
-    sineTerms = new Float32Array([1, 2, 3, 4, 5]);
-    cosineTerms = new Float32Array(sineTerms.length);
-    customWaveform = audioContext.createPeriodicWave(cosineTerms, sineTerms);
+sineTerms = new Float32Array([1, 2, 3, 4, 5]);
+cosineTerms = new Float32Array(sineTerms.length);
+customWaveform = audioContext.createPeriodicWave(cosineTerms, sineTerms);
   
     for (i=0; i<9; i++) {
         oscList[i] = {};
@@ -36,7 +42,7 @@ function playTone(freq, gain) {
     osc.connect(gain);
     
     //let type = wavePicker.options[wavePicker.selectedIndex].value;
-    sineTerms = new Float32Array([3,16,4,8,24]);
+    sineTerms = new Float32Array([s1,s2,s3,s4,s5]);
     cosineTerms = new Float32Array(sineTerms.length);
     customWaveform = audioContext.createPeriodicWave(cosineTerms, sineTerms);
     osc.setPeriodicWave(customWaveform);
