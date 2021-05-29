@@ -43,7 +43,7 @@ volumeControl.setAttribute("id", "volumeControl");
 volumeControl.type = "range";
 volumeControl.setAttribute("min", "0.0");
 volumeControl.setAttribute("max", "1.0");
-volumeControl.setAttribute("step", "0.05");
+volumeControl.setAttribute("step", "0.001");
 volumeControl.setAttribute("value", "0.2");
 volumeContainer.appendChild(lblVolume);
 volumeContainer.appendChild(volumeControl);

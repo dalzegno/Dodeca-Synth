@@ -21,6 +21,13 @@ mainGainNode.gain.value = volumeControl.value;
 
 volumeControl = document.getElementById("volumeControl");
 volumeControl.addEventListener("change", () => {
+mainGainNode.gain.setValueAtTime(mainGainNode.gain.value, audioContext.currentTime);
+mainGainNode.gain.linearRampToValueAtTime(volumeControl.value, audioContext.currentTime + 0.1);
+mainGainNode.gain.value = volumeControl.value;
+})
+volumeControl.addEventListener("mousemove", () => {
+mainGainNode.gain.setValueAtTime(mainGainNode.gain.value, audioContext.currentTime);
+mainGainNode.gain.linearRampToValueAtTime(volumeControl.value, audioContext.currentTime + 0.1);
 mainGainNode.gain.value = volumeControl.value;
 })
 
