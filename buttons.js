@@ -1,6 +1,6 @@
 
 //--------------KEYBINDING CONTROLS------------//
-
+/*
 var createSynthContainer = document.createElement("div");
 createSynthContainer.className = "createSynthContainer";
 
@@ -27,6 +27,7 @@ btnCreateSynth.innerHTML = "Create Synth";
 createSynthContainer.appendChild(btnCreateSynth);
 
 document.body.appendChild(createSynthContainer);
+*/
 
 //--------------------------------------//
 
@@ -74,8 +75,8 @@ attackControl.className = "ADSRrange";
 attackControl.type = "range";
 attackControl.setAttribute("min", "0.0");
 attackControl.setAttribute("max", "100.0");
-attackControl.setAttribute("step", "1");
-attackControl.setAttribute("value", "10");
+attackControl.setAttribute("step", "0.1");
+attackControl.setAttribute("value", "3");
 var attackItem = appendADSRItem(attackControl, "Attack ", "txtAttack");
 //----DECAY
 var decayControl = document.createElement("input");
@@ -84,8 +85,8 @@ decayControl.className = "ADSRrange";
 decayControl.type = "range";
 decayControl.setAttribute("min", "0.0");
 decayControl.setAttribute("max", "100.0");
-decayControl.setAttribute("step", "1");
-decayControl.setAttribute("value", "10");
+decayControl.setAttribute("step", "0.1");
+decayControl.setAttribute("value", "3");
 var decayItem = appendADSRItem(decayControl, "Decay ", "txtDecay");
 //----SUSTAIN
 var sustainControl = document.createElement("input");
@@ -95,7 +96,7 @@ sustainControl.type = "range";
 sustainControl.setAttribute("min", "0.0");
 sustainControl.setAttribute("max", "1.0");
 sustainControl.setAttribute("step", "0.01");
-sustainControl.setAttribute("value", "0.2");
+sustainControl.setAttribute("value", "1");
 var sustainItem = appendADSRItem(sustainControl, "Sustain ", "txtSustain");
 //----RELEASE
 var releaseControl = document.createElement("input");
@@ -104,8 +105,8 @@ releaseControl.className = "ADSRrange";
 releaseControl.type = "range";
 releaseControl.setAttribute("min", "0.0");
 releaseControl.setAttribute("max", "100.0");
-releaseControl.setAttribute("step", "1");
-releaseControl.setAttribute("value", "10");
+releaseControl.setAttribute("step", "0.1");
+releaseControl.setAttribute("value", "1");
 var releaseItem = appendADSRItem(releaseControl, "Release ", "txtRelease");
 //-----
 
@@ -114,3 +115,87 @@ ADSRcontainer.appendChild(decayItem);
 ADSRcontainer.appendChild(sustainItem);
 ADSRcontainer.appendChild(releaseItem);
 document.body.appendChild(ADSRcontainer);
+
+
+
+//-------- SINEWAVE CONTROLS
+// <------->SINECONTAINER
+var Sinecontainer = document.createElement("div");
+Sinecontainer.className = "sinecontainer";
+var SineHeader = document.createElement("div");
+SineHeader.innerHTML = "Custom Waveform";
+SineHeader.className = "sineHeader";
+Sinecontainer.appendChild(SineHeader);
+//----SINEITEM
+function appendSineItem(item, labeltext, textID){
+var sineitem = document.createElement("div");
+var sinelabel = document.createElement("label");
+sinelabel.className = "lblsine";
+sinelabel.innerHTML = `${labeltext}`;
+var sinetextBox = document.createElement("input");
+sinetextBox.type = "text";
+sinetextBox.className = "txtsine";
+sinetextBox.setAttribute("id", `${textID}`);
+sineitem.className = "sineitem";
+sineitem.appendChild(sinelabel);
+sineitem.appendChild(item);
+sineitem.appendChild(sinetextBox);
+return sineitem;
+}
+//---SINE1
+var s1Control = document.createElement("input");
+s1Control.setAttribute("id", "s1Control");
+s1Control.className = "sinerange";
+s1Control.type = "range";
+s1Control.setAttribute("min", "0.0");
+s1Control.setAttribute("max", "100.0");
+s1Control.setAttribute("step", "0.5");
+s1Control.setAttribute("value", "1");
+var s1Item = appendSineItem(s1Control, "Sine 1", "txts1");
+//---SINE2
+var s2Control = document.createElement("input");
+s2Control.setAttribute("id", "s2Control");
+s2Control.className = "sinerange";
+s2Control.type = "range";
+s2Control.setAttribute("min", "0.0");
+s2Control.setAttribute("max", "100.0");
+s2Control.setAttribute("step", "0.5");
+s2Control.setAttribute("value", "1");
+var s2Item = appendSineItem(s2Control, "Sine 2", "txts2");
+//---SINE3
+var s3Control = document.createElement("input");
+s3Control.setAttribute("id", "s3Control");
+s3Control.className = "sinerange";
+s3Control.type = "range";
+s3Control.setAttribute("min", "0.0");
+s3Control.setAttribute("max", "100.0");
+s3Control.setAttribute("step", "0.5");
+s3Control.setAttribute("value", "1");
+var s3Item = appendSineItem(s3Control, "Sine 3", "txts3");
+//---SINE4
+var s4Control = document.createElement("input");
+s4Control.setAttribute("id", "s4Control");
+s4Control.className = "sinerange";
+s4Control.type = "range";
+s4Control.setAttribute("min", "0.0");
+s4Control.setAttribute("max", "100.0");
+s4Control.setAttribute("step", "0.5");
+s4Control.setAttribute("value", "1");
+var s4Item = appendSineItem(s4Control, "Sine 4", "txts4");
+//---SINE5
+var s5Control = document.createElement("input");
+s5Control.setAttribute("id", "s5Control");
+s5Control.className = "sinerange";
+s5Control.type = "range";
+s5Control.setAttribute("min", "0.0");
+s5Control.setAttribute("max", "100.0");
+s5Control.setAttribute("step", "0.5");
+s5Control.setAttribute("value", "1");
+var s5Item = appendSineItem(s5Control, "Sine 5", "txts5");
+
+Sinecontainer.appendChild(s1Item);
+Sinecontainer.appendChild(s2Item);
+Sinecontainer.appendChild(s3Item);
+Sinecontainer.appendChild(s4Item);
+Sinecontainer.appendChild(s5Item);
+document.body.appendChild(Sinecontainer);

@@ -1,0 +1,82 @@
+.keyboardMap{
+    position: fixed;
+    display: inline;
+    bottom:60px;
+    height:150px;
+    width: 1150px;
+    right:0px;
+    transform: scaleX(50%) scaleY(50%) translateX(90%);
+}
+.kmapLow{
+    position: fixed;
+    bottom:0px;
+}
+.whiteContainer{
+    position:absolute;
+    bottom:0px;
+    display: inline-flex;
+    text-align:center;
+    height: 100px;
+}
+.blackContainer{
+    text-align: center;
+    position: absolute;
+    display: inline-flex;
+    left:-30px;
+    height: 100px;
+    top:0px;
+}
+.whiteNoteKey{
+    font-size: xx-large;
+    text-align: center;
+    border: 6px solid black;
+    border-radius: 6px 6px 6px 6px;
+    width:50px;
+    height:50px;
+    background-color: ivory;
+    user-select: none;
+    
+}
+.blackNoteKey{
+    font-size: xx-large;
+    text-align: center;
+    border: 6px solid white;
+    border-radius: 6px 6px 6px 6px;
+    
+    left:50px;
+    width:50px;
+    height:50px;
+    background-color: black;
+    color:white;
+    user-select: none;
+}
+
+
+.invisKey{
+    
+    color:transparent;
+    background-color: transparent;
+    border: 6px solid transparent;
+    width:50px;
+    pointer-events: none;
+    user-select: none;
+}
+
+.dropdown{
+    position: relative;
+    margin:5px;
+    background-color:ivory;
+    height:60px;
+    width: 80px;
+    bottom: 90px;
+    
+    font-size: xx-large;
+}
+
+.pickers{
+    position:absolute;
+    display: block;
+    left:-240px;
+    top: 100px;
+    
+}

@@ -18,7 +18,7 @@ volumeControl.addEventListener("change", () => {
 mainGainNode.gain.value = volumeControl.value;
 })
 
-    sineTerms = new Float32Array([2, 3, 1, 0, 1]);
+    sineTerms = new Float32Array([1, 2, 3, 4, 5]);
     cosineTerms = new Float32Array(sineTerms.length);
     customWaveform = audioContext.createPeriodicWave(cosineTerms, sineTerms);
   
@@ -36,7 +36,7 @@ function playTone(freq, gain) {
     osc.connect(gain);
     
     //let type = wavePicker.options[wavePicker.selectedIndex].value;
-    sineTerms = new Float32Array([1,2,3,0,5]);
+    sineTerms = new Float32Array([3,16,4,8,24]);
     cosineTerms = new Float32Array(sineTerms.length);
     customWaveform = audioContext.createPeriodicWave(cosineTerms, sineTerms);
     osc.setPeriodicWave(customWaveform);
@@ -84,8 +84,9 @@ keys = ['KeyA',
 
 // there must be a better way!!! me stupid
 function createKeyMap(note, keysDownList){
-    keymap = [];
+    keymap = new Array;
     if(note == "C"){
+      keymap = [];
     keymap = [
         keysDownList[1], keysDownList[2], keysDownList[3], keysDownList[4],
         keysDownList[5], keysDownList[7], keysDownList[8], keysDownList[9],
@@ -93,7 +94,8 @@ function createKeyMap(note, keysDownList){
         keysDownList[15], keysDownList[16], keysDownList[17], keysDownList[18], keysDownList[19],
     ]
             }
-    if(note == "D"){
+    else if(note == "D"){
+      keymap = [];
         keymap = [
             keysDownList[0], keysDownList[1], keysDownList[2], keysDownList[3],
             keysDownList[5], keysDownList[6], keysDownList[7], keysDownList[8],
@@ -102,7 +104,8 @@ function createKeyMap(note, keysDownList){
             keysDownList[20], keysDownList[21]
         ]
     }
-    if(note == "E"){
+    else if(note == "E"){
+      keymap = [];
         keymap = [
             keysDownList[0], keysDownList[1],keysDownList[3],keysDownList[4],
             keysDownList[5],keysDownList[6], keysDownList[7],keysDownList[8],
@@ -111,7 +114,8 @@ function createKeyMap(note, keysDownList){
             keysDownList[20]
         ]
     }
-    if(note == "F"){
+    else if(note == "F"){
+      keymap = [];
         keymap = [
             keysDownList[1], keysDownList[2],keysDownList[3],keysDownList[4],
             keysDownList[5],keysDownList[6], keysDownList[7],keysDownList[9],
@@ -120,7 +124,8 @@ function createKeyMap(note, keysDownList){
             keysDownList[20]
         ]
     }
-    if(note == "G"){
+    else if(note == "G"){
+      keymap = [];
         keymap = [ keysDownList[0],
             keysDownList[1], keysDownList[2],keysDownList[3],keysDownList[4],
             keysDownList[5],keysDownList[7], keysDownList[8],keysDownList[9],
@@ -129,7 +134,8 @@ function createKeyMap(note, keysDownList){
         ]
     }
     
-    if(note == "A"){
+    else if(note == "A"){
+      keymap = [];
         keymap = [ keysDownList[0],
             keysDownList[1], keysDownList[2],keysDownList[3],keysDownList[5],
             keysDownList[6],keysDownList[7], keysDownList[8],keysDownList[9],
@@ -138,12 +144,14 @@ function createKeyMap(note, keysDownList){
         ]
     }
     
-    if(note == "B"){
+    else if(note == "B"){
+      keymap = [];
         keymap = [ keysDownList[0],
-            keysDownList[1], keysDownList[3],keysDownList[3],keysDownList[4],
-            keysDownList[5],keysDownList[6], keysDownList[7],keysDownList[9],
-            keysDownList[10], keysDownList[11],keysDownList[12],keysDownList[13],
-            keysDownList[14],keysDownList[15], keysDownList[17],keysDownList[18],keysDownList[19],keysDownList[20]
+            keysDownList[1], keysDownList[3],keysDownList[4],keysDownList[5],
+            keysDownList[6],keysDownList[7], keysDownList[9],keysDownList[10],
+            keysDownList[11], keysDownList[12],keysDownList[13],keysDownList[14],
+            keysDownList[15],keysDownList[17], keysDownList[18],keysDownList[19],
+            keysDownList[20],keysDownList[21]
         ]
     }
     return keymap;
@@ -161,23 +169,7 @@ switch(note){
     case "B": notenum = 10; break;
 }
 for(let i = 0; i < keymap.length; i++){
-    if(note == "B"){
-        if(notenum == 12){
-            notenum = 0;
-        }
-     keypressList[keymap[i]] = [];
-       keypressList[keymap[i]] = document.getElementById(`${octave}${notenum}`).dataset;
-        
-       console.log(`${octave}${notenum}`);
-        
-        
-        notenum++;
-        
-        if(notenum == 12){
-            octave++;
-        }
-    }
-    else{
+  
     if(notenum == 12){
         octave++;
         
@@ -187,7 +179,7 @@ for(let i = 0; i < keymap.length; i++){
    keypressList[keymap[i]] = document.getElementById(`${octave}${notenum}`).dataset;
     notenum++;
     }
-}
+
 }
 
 
@@ -240,7 +232,6 @@ let start;
       }
     }
   }
-
   function noteReleased(event) {
     let dataset = event.currentTarget.dataset;
     const now = audioContext.currentTime;
@@ -248,10 +239,8 @@ let start;
     let keyValid;
     if( event.buttons & 1 ){
         dataset = event.currentTarget.dataset;
-        
     }
      else if(event.code){
-         
        dataset = keypressList[event.code];
        target = document.getElementById(`${dataset["octave"]}${dataset["notenumber"]}`);
       }
@@ -293,7 +282,7 @@ let start;
         noteGain.gain.setValueAtTime(gainValue,0);
         noteGain.gain.linearRampToValueAtTime(sLevel, now + timePassinvert);
    
-        noteGain.gain.linearRampToValueAtTime(0, now + timePassinvert + releaseTime + 0.1);
+        noteGain.gain.linearRampToValueAtTime(0, now + timePassinvert + releaseTime);
       }
       else if((start + attackTime + decayTime)<= now) {
         let gainValue = noteGain.gain.value;
