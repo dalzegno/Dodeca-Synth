@@ -11,12 +11,12 @@ createOctaves(8, x.keyboard, scale);
 // Creates key bindings
 var keylistUpper = getKeysDown("upper");
 var keymap = createKeyMap("C", keylistUpper);
-createKeyBindings("C", 2, keymap);
+createKeyBindings("C", 1, keymap);
 createKeyEvents(keymap);
 
 var keylistLower = getKeysDown("lower");
 var keymaplower = createKeyMap("C", keylistLower);
-createKeyBindings("C", 3, keymaplower);
+createKeyBindings("C", 2, keymaplower);
 createKeyEvents(keymaplower);
 
 

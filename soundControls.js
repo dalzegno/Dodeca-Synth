@@ -30,6 +30,27 @@ releaseControl.addEventListener("mousemove", ()=>{
     txtRelease.value = releaseTime;
 })
 
+attackControl.addEventListener("click", () =>{
+    attackTime = attackControl.value/10;
+    
+    txtAttack.value = attackTime;
+    console.log(attackControl.value);
+})
+decayControl.addEventListener("click", ()=>{
+    decayTime = decayControl.value/10;
+    
+    txtDecay.value = decayTime;
+})
+sustainControl.addEventListener("click", ()=>{
+    sLevel = sustainControl.value;
+    
+    txtSustain.value = sLevel;
+})
+releaseControl.addEventListener("click", ()=>{
+    releaseTime = releaseControl.value/10;
+    txtRelease.value = releaseTime;
+})
+
 //------------------
 
 //----------CUSTOM WAVEFORMS
@@ -67,6 +88,27 @@ s4Control.addEventListener("mousemove", ()=>{
     s4 = s4Control.value;
 })
 s5Control.addEventListener("mousemove", ()=>{
+    txtS5.value = s5Control.value;
+    s5 = s5Control.value;
+})
+
+s1Control.addEventListener("click", ()=>{
+    txtS1.value = s1Control.value;
+    s1 = s1Control.value;
+})
+s2Control.addEventListener("click", ()=>{
+    txtS2.value = s2Control.value;
+    s2 = s2Control.value;
+})
+s3Control.addEventListener("click", ()=>{
+    txtS3.value = s3Control.value;
+    s3 = s3Control.value;
+})
+s4Control.addEventListener("click", ()=>{
+    txtS4.value = s4Control.value;
+    s4 = s4Control.value;
+})
+s5Control.addEventListener("click", ()=>{
     txtS5.value = s5Control.value;
     s5 = s5Control.value;
 })

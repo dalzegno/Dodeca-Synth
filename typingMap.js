@@ -67,7 +67,11 @@ octavePickA.addEventListener("change", ()=>{
     createKeyEvents(keymap);
 })
 //Initial typing maps
-createTypingKeyMap("upper", notepickA.value, "1");
+notepick1.selectedIndex = 0;
+notepickA.selectedIndex = 0;
+octavePick1.selectedIndex = 0;
+octavePickA.selectedIndex = 1;
+createTypingKeyMap("upper", notepick1.value, "1");
 createTypingKeyMap("lower", notepickA.value, "A");
 
 
