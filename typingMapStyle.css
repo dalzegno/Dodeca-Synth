@@ -6,11 +6,11 @@
     width:400px;
 }
 #kmapLow{
-    position: absolute;
+    position: fixed;
     left:550px ;
 }
 #kmapUpper{
-    position: absolute;
+    position: fixed;
     left:50px;
 }
 .whiteContainer{

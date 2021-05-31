@@ -100,7 +100,7 @@
 }
 
 .justIntContainer{
-    position: absolute;
+    position: fixed;
     top:150px;
     color:black;
     left:500px;
@@ -117,7 +117,7 @@
     bottom:0px;
 }
 .equalTempBtn{
-    position:absolute;
+    position:fixed;
     font-weight: bold;
     height:50px;
     top:200px;
@@ -127,7 +127,7 @@
 }
 
 .aFreqitem{
-    position:absolute;
+    position:fixed;
     left:30px;
     top:0px;
 }
