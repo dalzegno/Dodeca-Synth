@@ -15,14 +15,14 @@
 #volumeContainer{
     position:fixed;
     font-size:2em;;
-    left:300px;
+    left:420px;
     top:0px;
     
     right:300px;
 }
 #volumeContainer :first-child{
     position: absolute;
-    left:80px;
+    left:130px;
 }
 #volumeControl{
     position: relative;
