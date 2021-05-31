@@ -8,11 +8,13 @@ var notes = ["C","D","E","F","G","A","B"];
 
 var kmapContainer = document.createElement("div");
 kmapContainer.className = "keyboardMap";
+kmapContainer.setAttribute("id", "kmapUpper");
 
 
 
 var kmapContainerLow =document.createElement("div");
 kmapContainerLow.className = "keyboardMap kmapLow";
+kmapContainerLow.setAttribute("id", "kmapLow");
 
 document.body.appendChild(kmapContainer);
 document.body.appendChild(kmapContainerLow);

@@ -58,10 +58,10 @@ function getJustScale(a,octaves, fundamentalNote) {
   var fundamental = 0;
   var t0, t1, t2, t3, t4, t5, t6, t7, t8, t9, t10;
   var tones = [t0, t1, t2, t3, t4, t5, t6, t7, t8, t9, t10];
-  var ratios = [1, 1.0625, 1.125, 1.1875, 1.25, 1.3333333333, 
-    1.4666666666,
-  1.5, 1.6, 1.6666666666,
-   1.7777777777, 1.9];
+  var ratios = [1, 1.0625, 1.125, 1.1875, 1.25, (1 + (1/3)), 
+    (1/12) * 17,
+  1.5, 1.6, (1/3) * 5,
+   (1/9) * 16, 1.9];
   let j = 0;
   if(fundamentalNote == "C"){
       fundamental = c;

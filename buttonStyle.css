@@ -53,7 +53,7 @@
     font-size: small;
     color:black;
     font-weight: bold;
-    top:10px;
+    top:5px;
 }
 .txtADSR{
     position: relative;
@@ -69,7 +69,7 @@
 
 .sinecontainer{
     position:fixed;
-    right:30px;
+    left:950px;
     top:90px;
 }
 .sineitem{
@@ -87,7 +87,7 @@
     font-size: small;
     color:black;
     font-weight: bold;
-    bottom:5px;
+    bottom:10px;
 }
 .txtsine{
     position: relative;
@@ -101,26 +101,27 @@
 
 .justIntContainer{
     position: absolute;
-    left:200px;
+    top:150px;
     color:black;
     left:500px;
-    top:400px;
+    height:100px;
 }
 .justIntContainer :first-child{
     
     position: absolute;
-    bottom:160px;
+    top:0px;
     font-size: x-large;
 }
 #justNoteDropdown{
     border-radius: 20px 20px 20px 20px;
+    bottom:0px;
 }
 .equalTempBtn{
     position:absolute;
     font-weight: bold;
     height:50px;
-    top:140px;
-    left:500px;
+    top:200px;
+    left:700px;
     color:black;
     background-color: wheat;
 }
@@ -142,6 +143,6 @@
 }
 .lblaFreq{
     position: relative;
-    top:25px;
+    top:20px;
     left:40px;
 }
