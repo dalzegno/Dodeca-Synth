@@ -225,15 +225,15 @@ let start;
         console.log(keypressList[event.code], "NOTE PRESSED!");
         //mainGainNode.gain.setValueAtTime(0,0);
         //mainGainNode.gain.linearRampToValueAtTime(1, now + 1);
-        /*
-        if(target.className == "whiteKey"){
-          target.setAttribute("class", "whitekey activeWhite");
+        
+        if(target.className == "whiteKey" || target.className == "whiteKey inactiveWhite" ){
+          target.setAttribute("class", "whiteKey activeWhite");
         
         }
         else{
-          target.setAttribute("class", "blackkey activeBlack");
+          target.setAttribute("class", "blackKey activeBlack");
       }
-      */
+      
         let octave = +dataset["octave"];
        gainList[octave][dataset["notenumber"]] = makeGain();
        let noteGain = gainList[octave][dataset["notenumber"]];
@@ -261,14 +261,14 @@ let start;
     
     if (dataset && dataset["pressed"] ) {
         //aTime = attackTime;
-        /*
-        if(dataset["notenumber"].length == 1){
-          target.setAttribute("class", "whitekey inactiveWhite");
+        
+        if(target.className == "whiteKey activeWhite"){
+          target.setAttribute("class", "whiteKey inactiveWhite");
       }
         else{
-          target.setAttribute("class", "blackkey inactiveBlack");
+          target.setAttribute("class", "blackKey inactiveBlack");
       }
-      */
+      
       let octave = +dataset["octave"];
       let noteGain = gainList[octave][dataset["notenumber"]];
      // oscList[octave][dataset["note"]].connect(mainGainNode);
