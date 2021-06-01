@@ -159,7 +159,6 @@ for(let i = 0; i < kmap.length; i++){
     k.className = "invisKey"
     }
 }
-console.log("kmaps");
 var km = createKeyMap(note, kmap);
 for(let i = 0; i < kmap.length; i++){
     for(let j = 0; j < km.length; j++){

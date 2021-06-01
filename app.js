@@ -8,7 +8,7 @@ x.keyboard.className = "keyboard";
 var scale =  getEqualScale(9, aFrequency);
 
 var justscale = getJustScale(aFrequency, 9, "C");
-createOctaves(8, x.keyboard, justscale);
+createOctaves(8, x.keyboard, scale);
 
 // JUST INTONATION SELECT
 var justNote = document.getElementById("justNoteDropdown");

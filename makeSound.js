@@ -222,7 +222,7 @@ let start;
       
       if (!dataset["pressed"]) {
         start = audioContext.currentTime;
-        console.log(keypressList[event.code], "NOTE PRESSED!");
+        console.log(keypressList[event.code], "Note Info");
         //mainGainNode.gain.setValueAtTime(0,0);
         //mainGainNode.gain.linearRampToValueAtTime(1, now + 1);
         
