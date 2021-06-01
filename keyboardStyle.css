@@ -19,7 +19,7 @@ body{
     position:fixed;
     display:flex;
     margin-right:10px;
-    transform: scale(0.7);
+    transform: scaleY(1.2);
     left:-2350px;
     bottom: 100px;
 }
