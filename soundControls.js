@@ -13,7 +13,6 @@ attackControl.addEventListener("mousemove", () =>{
     attackTime = attackControl.value/10;
     
     txtAttack.value = attackTime;
-    console.log(attackControl.value);
 })
 decayControl.addEventListener("mousemove", ()=>{
     decayTime = decayControl.value/10;
