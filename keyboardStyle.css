@@ -19,7 +19,7 @@ body{
     position:fixed;
     display:flex;
     margin-right:10px;
-    transform: scaleY(1.2);
+    transform: scale(0.89);
     left:-2350px;
     bottom: 100px;
 }
@@ -31,6 +31,7 @@ body{
     width:2400px;
     height:150px;
     bottom:100px;
+    border-radius: 12px 12px 12px 12px;
 }
 .octave{
     display: flex;
@@ -81,4 +82,21 @@ body{
 }
 .firstBlack{
     margin-right: 30px;
+}
+
+@keyframes keypressWhite{
+    from {height: 120px; border-left:1px inset gray;}
+    to {height:124px;  border-left: 7x solid rgba(0,0,50,.2);}
+}
+@keyframes keyReleaseWhites{
+    from {height:124px;  border-left: 7px solid rgba(0,0,50,.2);}
+    to {height: 120px;  border-left:1px inset gray;}
+}
+@keyframes keypressBlack{
+    from {background-color: black; border-bottom: 7px inset rgb(83, 83, 83);}
+    to {background-color: rgba(83, 83, 83,1);;border-bottom: 3px inset rgb(49, 49, 49);}
+}
+@keyframes keyReleaseBlack{
+    from {background-color: darkgrey;border-bottom: 3px inset rgb(49, 49, 49);}
+    to { background-color: black; border-bottom: 7px inset rgb(83, 83, 83);}
 }
