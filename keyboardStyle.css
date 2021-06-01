@@ -88,18 +88,18 @@ body{
     animation-name: keypressWhite;
     animation-duration: 0.1s;
     height: 105px;
-    border-left: 10px solid rgba(0,0,50,.2);
+    border-left: 10px outset rgba(0,0,50,.2);
 }
 .inactiveWhite{
     animation-name: keyReleaseWhites;
     animation-duration: 0.1s;
-    border-left:1px inset gray;
+    border-left:1px outset gray;
 }
 .activeBlack{
     animation-name: keypressBlack;
     animation-duration: 0.1s;
     background-color: darkgrey;
-    border-bottom: 3px inset rgb(49, 49, 49);
+    border-bottom: 3px solid rgb(49, 49, 49);
 }
 .inactiveBlack{
     animation-name: keyReleaseBlack;
