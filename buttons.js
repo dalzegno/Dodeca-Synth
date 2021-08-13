@@ -148,9 +148,9 @@ s1Control.setAttribute("id", "s1Control");
 s1Control.className = "sinerange";
 s1Control.type = "range";
 s1Control.setAttribute("min", "0.0");
-s1Control.setAttribute("max", "300.0");
-s1Control.setAttribute("step", "0.5");
-s1Control.setAttribute("value", "4");
+s1Control.setAttribute("max", "1.0");
+s1Control.setAttribute("step", "0.01");
+s1Control.setAttribute("value", "0.5");
 var s1Item = appendSineItem(s1Control, "Sine 1", "txts1");
 //---SINE2
 var s2Control = document.createElement("input");
@@ -158,9 +158,9 @@ s2Control.setAttribute("id", "s2Control");
 s2Control.className = "sinerange";
 s2Control.type = "range";
 s2Control.setAttribute("min", "0.0");
-s2Control.setAttribute("max", "300.0");
-s2Control.setAttribute("step", "0.5");
-s2Control.setAttribute("value", "3");
+s2Control.setAttribute("max", "1.0");
+s2Control.setAttribute("step", "0.01");
+s2Control.setAttribute("value", "0.5");
 var s2Item = appendSineItem(s2Control, "Sine 2", "txts2");
 //---SINE3
 var s3Control = document.createElement("input");
@@ -168,9 +168,9 @@ s3Control.setAttribute("id", "s3Control");
 s3Control.className = "sinerange";
 s3Control.type = "range";
 s3Control.setAttribute("min", "0.0");
-s3Control.setAttribute("max", "300.0");
-s3Control.setAttribute("step", "0.5");
-s3Control.setAttribute("value", "2");
+s3Control.setAttribute("max", "1.0");
+s3Control.setAttribute("step", "0.01");
+s3Control.setAttribute("value", "0.5");
 var s3Item = appendSineItem(s3Control, "Sine 3", "txts3");
 //---SINE4
 var s4Control = document.createElement("input");
@@ -178,9 +178,9 @@ s4Control.setAttribute("id", "s4Control");
 s4Control.className = "sinerange";
 s4Control.type = "range";
 s4Control.setAttribute("min", "0.0");
-s4Control.setAttribute("max", "300.0");
-s4Control.setAttribute("step", "0.5");
-s4Control.setAttribute("value", "1");
+s4Control.setAttribute("max", "1.0");
+s4Control.setAttribute("step", "0.01");
+s4Control.setAttribute("value", "0.5");
 var s4Item = appendSineItem(s4Control, "Sine 4", "txts4");
 //---SINE5
 var s5Control = document.createElement("input");
@@ -188,9 +188,9 @@ s5Control.setAttribute("id", "s5Control");
 s5Control.className = "sinerange";
 s5Control.type = "range";
 s5Control.setAttribute("min", "0.0");
-s5Control.setAttribute("max", "300.0");
-s5Control.setAttribute("step", "0.5");
-s5Control.setAttribute("value", "0");
+s5Control.setAttribute("max", "1.0");
+s5Control.setAttribute("step", "0.01");
+s5Control.setAttribute("value", "0.5");
 var s5Item = appendSineItem(s5Control, "Sine 5", "txts5");
 
 Sinecontainer.appendChild(s1Item);
@@ -254,6 +254,16 @@ var notes = ["C","Db","D","Eb","E","F","Gb","G","Ab","A","Bb","B"];
 
 var justnoteDropdown = document.createElement("select");
 justnoteDropdown.className = "dropdown";
+justnoteDropdown.onkeydown = function(e) {
+    if (!e) {
+      e = window.event;
+    }
+    if (e.keyCode >= 65 && e.keyCode <= 90) // A to Z
+    {
+      e.returnValue = false;
+      e.cancel = true;
+    }
+  };
 justnoteDropdown.setAttribute("id", `justNoteDropdown`);
 notes.forEach((index) => {
    var n = document.createElement("option");

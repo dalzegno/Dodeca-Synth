@@ -234,7 +234,7 @@ let start;
           target.setAttribute("class", "blackKey activeBlack");
       }
       
-        let octave = +dataset["octave"];
+       let octave = +dataset["octave"];
        gainList[octave][dataset["notenumber"]] = makeGain();
        let noteGain = gainList[octave][dataset["notenumber"]];
        oscList[octave][dataset["notenumber"]] = playTone(dataset["frequency"], gainList[octave][dataset["notenumber"]]);
